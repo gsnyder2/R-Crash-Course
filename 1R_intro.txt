@@ -1,0 +1,95 @@
+#R as a calculator
+ 2+4
+[1] 6
+ 2*6
+[1] 12
+ x<-6
+ x
+[1] 6
+ 2*x
+[1] 12
+
+ #COMMANDS
+ #rep: "repeat", repeats a number or letter a given number of times
+
+
+ y<-rep(2,4)
+ y
+[1] 2 2 2 2
+ y/3
+[1] 0.6666667 0.6666667 0.6666667 0.6666667
+
+ #c: "concatenate", links together a series of numbers or letters into one vector
+ c(x,y,84)
+[1]  6  2  2  2  2 84
+ rep('c', 12)
+ [1] "c" "c" "c" "c" "c" "c" "c" "c" "c" "c" "c" "c"
+
+ z<-c(2,4,7,8,9)
+ z
+[1] 2 4 7 8 9
+ a<-c(rep(z,2),1000,2000)
+ a
+ [1]    2    4    7    8    9    2    4    7    8    9 1000 2000
+
+ #help: opens an information window regarding the use of a specific command
+ #help.search: searches for commands and information related to a given topic. Uses hyphens or quotes (' or ").
+ help(rep)
+starting httpd help server ... done
+ help.search('chi-square')
+ help.search("chi-square")
+
+ #DATA SETS
+ #You can type and save small data sets for quick analysis
+ row1<-c(2,4,5,7)
+ row2<-c(12,23,34,23)
+ data<-rbind(row1,row2)
+ data
+     [,1] [,2] [,3] [,4]
+row1    2    4    5    7
+row2   12   23   34   23
+ 
+ col1<-c(2,4,5,7)
+ col2<-c(12,23,34,23)
+ data2<-cbind(col1,col2)
+ data2
+     col1 col2
+[1,]    2   12
+[2,]    4   23
+[3,]    5   34
+[4,]    7   23
+
+ #Import a data table from Excel
+
+data3<-read.table(pipe("pbpaste"))
+Warning message:
+In read.table(pipe("pbpaste"), sep = "\t") :
+  incomplete final line found by readTableHeader on 'pbpaste'
+# Don’t worry about the warning message 
+
+ data3
+     V1 V2
+1 black 34
+2 green 54
+3  blue  6
+4   red  6
+
+ data4<-read.table(pipe(“pbpaste”),head=T)   
+Warning message:
+In read.table(pipe("pbpaste"), head = T) :
+  incomplete final line found by readTableHeader on 'pbpaste'
+#Again, no need to worry about this warning message 
+
+ data4
+  color freq
+1 black   34
+2 green   54
+3  blue    6
+4   red    6
+
+ data4$color
+[1] black green blue  red  
+Levels: black blue green red
+
+ ls()
+ [1] "a"     "col1"  "col2"  "data"  "data2" "data3" "data4" "row1"  "row2"  "x"     "y"     "z"    
