@@ -1,0 +1,181 @@
+> #Import "crabs" data to conduct a two sample t-test
+
+> crabs<-read.table(pipe("pbpaste"),header=TRUE)
+
+> crabs
+    individual length    sex
+1            1   5.44 female
+2            2   5.56 female
+3            3   4.52 female
+4            4   4.86 female
+5            5   2.95 female
+6            6   4.61 female
+7            7   4.61 female
+8            8   5.60 female
+9            9   4.65 female
+10          10   3.61 female
+11          11   3.82 female
+12          12   5.02 female
+13          13   4.36 female
+14          14   3.86 female
+15          15   4.03 female
+16          16   4.61 female
+17          17   5.35 female
+18          18   3.49 female
+19          19   4.32 female
+20          20   4.48 female
+21          21   3.40 female
+22          22   5.89 female
+23          23   4.44 female
+24          24   5.10 female
+25          25   2.61 female
+26          26   5.27 female
+27          27   5.31 female
+28          28   4.65 female
+29          29   5.73 female
+30          30   5.15 female
+31          31   4.90 female
+32          32   5.44 female
+33          33   5.44 female
+34          34   3.94 female
+35          35   3.78 female
+36          36   4.23 female
+37          37   2.95 female
+38          38   5.06 female
+39          39   4.57 female
+40          40   4.03 female
+41          41   4.15 female
+42          42   3.49 female
+43          43   4.15 female
+44          44   3.65 female
+45          45   3.44 female
+46          46   6.14 female
+47          47   5.10 female
+48          48   3.90 female
+49          49   4.48 female
+50          50   4.03 female
+51          51   4.07 female
+52          52   4.65 female
+53          53   5.93 female
+54          54   4.65 female
+55          55   8.01   male
+56          56   5.48   male
+57          57   7.01   male
+58          58   7.14   male
+59          59   7.22   male
+60          60   6.31   male
+61          61   6.35   male
+62          62   7.72   male
+63          63   7.93   male
+64          64   6.97   male
+65          65   6.23   male
+66          66   7.26   male
+67          67   7.55   male
+68          68   6.35   male
+69          69   6.39   male
+70          70   7.10   male
+71          71   4.32   male
+72          72   5.48   male
+73          73   6.93   male
+74          74   4.86   male
+75          75   5.40   male
+76          76   8.30   male
+77          77   6.39   male
+78          78   7.89   male
+79          79   5.64   male
+80          80   4.69   male
+81          81   5.06   male
+82          82   6.02   male
+83          83   5.31   male
+84          84   6.60   male
+85          85   7.59   male
+86          86   5.81   male
+87          87   6.23   male
+88          88   7.06   male
+89          89   4.61   male
+90          90   5.81   male
+91          91   4.23   male
+92          92   9.21   male
+93          93   3.94   male
+94          94   4.19   male
+95          95   4.81   male
+96          96   4.65   male
+97          97   6.68   male
+98          98   6.97   male
+99          99   5.69   male
+100        100   6.68   male
+101        101   7.93   male
+102        102   8.13   male
+103        103   6.43   male
+104        104   5.15   male
+105        105   7.06   male
+106        106   4.94   male
+107        107   6.85   male
+108        108   4.48   male
+109        109   3.98   male
+110        110   5.35   male
+111        111   4.19   male
+112        112   5.23   male
+113        113   4.98   male
+114        114   5.98   male
+
+> t.test(length~sex,data=crabs)
+
+        Welch Two Sample t-test
+
+data:  length by sex 
+t = -8.3153, df = 101.657, p-value = 4.299e-13
+alternative hypothesis: true difference in means is not equal to 0 
+95 percent confidence interval:
+ -2.027661 -1.246599 
+sample estimates:
+mean in group female   mean in group male 
+            4.508704             6.145833 
+
+> t.test(length~sex,data=crabs,var.equal=T)
+
+        Two Sample t-test
+
+data:  length by sex 
+t = -8.1334, df = 112, p-value = 6.27e-13
+alternative hypothesis: true difference in means is not equal to 0 
+95 percent confidence interval:
+ -2.035952 -1.238308 
+sample estimates:
+mean in group female   mean in group male 
+            4.508704             6.145833 
+
+> #Make a graph to visually inspect the data set
+> boxplot(length~sex,data=crabs)
+### To save the figure that is generated on a Mac (would also work on Windows, but they can just point and click to save): 
+> dev.copy(pdf, “Your_Figure_Name.pdf") 
+pdf 
+  3 
+> dev.off() 
+quartz 
+     2 
+### To FIND where R saved the figure you just saved: 
+> getwd()
+[1] "/Users/ke2" # This will be different for everyone 
+
+### To CHANGE where R will save things: 
+> setwd(“/Users/ke2/Documents/“)  #Again, this will be a different path on your computer
+
+
+
+> #Improve graph by adding labels and notches
+> boxplot(length~sex,data=crabs, notch=T, xlab="sex",ylab="merus length (mm)")
+### To save the figure that is generated on a Mac (would also work on Windows, but they can just point and click to save): 
+> dev.copy(pdf, “Your_Figure_Name.pdf") 
+pdf 
+  3 
+> dev.off() 
+quartz 
+     2 
+### To FIND where R saved the figure you just saved: 
+> getwd()
+[1] "/Users/ke2" # This will be different for everyone 
+
+### To CHANGE where R will save things: 
+> setwd(“/Users/ke2/Documents/“)  #Again, this will be a different path on your computer
+
