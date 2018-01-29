@@ -1,0 +1,5 @@
+color	freq
+black	34
+green	54
+blue	6
+red	6

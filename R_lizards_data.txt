@@ -1,0 +1,4 @@
+Tail length	Brown	Green	Total
+Short	10	30	40
+Long	40	20	60
+Total	50	50	100
