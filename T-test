@@ -1,4 +1,4 @@
-> #Import "crabs" data to conduct a two sample t-test
+> #Import "crabs" data to conduct a two sample t-test.
 
 > crabs<-read.table(pipe("pbpaste"),header=TRUE)
 
