@@ -1,4 +1,4 @@
-> #CHI-SQUARE TEST: GOODNESS OF FIT
+> #CHI-SQUARE TEST: GOODNESS OF FIT.
 
 > colors<-c(34,54,6,6)
 > colors
