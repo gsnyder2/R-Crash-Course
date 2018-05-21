@@ -90,6 +90,5 @@ In read.table(pipe("pbpaste"), head = T) :
  data4$color
 [1] black green blue  red  
 Levels: black blue green red
-
  ls()
  [1] "a"     "col1"  "col2"  "data"  "data2" "data3" "data4" "row1"  "row2"  "x"     "y"     "z"    
