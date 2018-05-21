@@ -111,7 +111,7 @@ In read.table(pipe("pbpaste"), header = TRUE) :
 104  other   f   3    89.0   40.0
 
 > # First let's test if both variables have a normal distribution
-> # The null hypothesis of the Shapiro-Wilk Normality test is that the variable is normally distributed
+> # The null hypothesis of the Shapiro-Wilk Normality test is that the variable is normally distributed.
 
 > hist(opos$total_l,breaks=20)
 ### To save the figure that is generated on a Mac (would also work on Windows, but they can just point and click to save): 
