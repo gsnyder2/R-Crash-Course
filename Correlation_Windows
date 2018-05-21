@@ -141,7 +141,7 @@ sample estimates:
       cor 
 0.5656455
 
-> #Now let's try a Spearman's correlation test based on ranks
+> #Now let's try a Spearman's correlation test based on ranks.
 > #Spearman's is used when one variables is not normal
 
 > hist(opos$age,breaks=20)
