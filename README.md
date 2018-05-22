@@ -15,3 +15,10 @@ Use the script Correlation.txt, and datafile R_opossum_length_data.txt.
 # Example of t-test in R and boxplot graphs
 
 Use the script T-test.txt and datafile R_crabs.txt. 
+
+
+
+
+
+# Sources
+These datafiles and scripts have been modified from various coursework from the University of Miami. 
