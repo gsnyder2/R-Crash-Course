@@ -90,6 +90,7 @@ table(flamingo$Body.temp)
 tapply(flamingo$Leg.Length,flamingo$Body.temp,mean)
 ?tapply
 
+
 sort(flamingo$Body.temp) #sorting
 order(flamingo$Body.temp) #to sort one variable by the values of another use order()
 flamingo=flamingo[order(flamingo$Body.temp),]
