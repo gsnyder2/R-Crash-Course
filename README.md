@@ -1,6 +1,6 @@
 # R-Crash-Course
 
-Basic R scripts to serve as R tutorial. RStudio is recommended over R. Please use Windows version of scripts if that is your platform. 
+Basic R scripts to serve as R tutorial for undergraduate class/workshop. RStudio is an integrated devleopment environment for R, please install both. 
 
 Start with R_intro.txt; corresponding data is in R_colors_data.txt This script will introduce the basic syntax of R code, show how to combine data, and how to import data from a spreadsheet. In RStudio, you may import with the optional commands, or by exploring the top right panel. 
 
